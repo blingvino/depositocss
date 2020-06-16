@@ -1,0 +1,260 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	backface-visibility: hidden;
+}
+
+#container {
+	width: 300px;
+	height: 600px;
+	border: 1px solid #000;
+	box-sizing: border-box;
+	overflow: hidden;
+	background: #465fe5;
+	position: relative;
+	cursor: pointer;
+}
+
+.absolute {
+	position: absolute;
+}
+
+/********************** Frame 1 *******************/
+#f1_txt1, #f1_txt2, #f1_txt3, #f1_txt4, #f1_txt5{
+	opacity: 0;
+}
+
+#modelo1{
+	opacity: 0;
+}
+
+/*-------------------------------------------------*/
+.active #f1_txt1{
+	animation: f1_txt_in 500ms cubic-bezier(0.165, 0.84, 0.44, 1) 100ms 1 normal forwards,
+	alphaOut 1ms step-start 3400ms 1 normal forwards;
+}
+.active #f1_txt2{
+	animation: f1_txt_in 500ms cubic-bezier(0.165, 0.84, 0.44, 1) 200ms 1 normal forwards,
+	alphaOut 1ms step-start 3400ms 1 normal forwards;
+}
+.active #f1_txt3{
+	animation: f1_txt_in 500ms cubic-bezier(0.165, 0.84, 0.44, 1) 300ms 1 normal forwards,
+	alphaOut 1ms step-start 3400ms 1 normal forwards;
+}
+.active #f1_txt4{
+	animation: f1_txt_in 500ms cubic-bezier(0.165, 0.84, 0.44, 1) 400ms 1 normal forwards,
+	alphaOut 1ms step-start 3400ms 1 normal forwards;
+}
+
+.active #modelo1{
+	animation: modelo_in 1000ms cubic-bezier(0.165, 0.84, 0.44, 1) 100ms 1 normal forwards,
+	alphaOut 1ms step-start 3400ms 1 normal forwards;
+}
+/*-------------------------------------------------*/
+@keyframes f1_txt_in{
+	0%{opacity: 0; transform: translateY(20px) rotate(0.01deg);}
+	100%{opacity: 1; transform: translateY(0px) rotate(0.01deg);}
+}
+@keyframes f1_txt_out{
+	0%{opacity: 1; transform: translateY(0px) rotate(0.01deg);}
+	100%{opacity: 0; transform: translateY(-10px) rotate(0.01deg);}
+}
+
+@keyframes modelo_in{
+	0%{opacity: 0; transform: translateY(100px) rotate(0.01deg);}
+	100%{opacity: 1; transform: translateY(0px) rotate(0.01deg);}
+}
+
+/********************** Frame 2 *******************/
+#f2_txt1, #f2_txt2, #f2_txt3, #f2_txt4, #f2_txt5{
+	opacity: 0;
+}
+
+#modelo2{
+	opacity: 0;
+}
+
+#circ_lar, #circ_ver{
+	transform-origin: 152px 172px;
+	opacity: 0;
+}
+
+#f2_textos{
+	transform-origin: 152px 172px;
+}
+
+
+/*-------------------------------------------------*/
+.active #f2_txt1{
+	animation: f2_txt_in 700ms cubic-bezier(0.165, 0.84, 0.44, 1) 3700ms 1 normal forwards;
+}
+.active #f2_txt2{
+	animation: f2_txt_in 700ms cubic-bezier(0.165, 0.84, 0.44, 1) 4100ms 1 normal forwards;
+}
+.active #f2_txt3{
+	animation: f2_txt_in 700ms cubic-bezier(0.165, 0.84, 0.44, 1) 4300ms 1 normal forwards;
+}
+.active #f2_txt4{
+	animation: f2_txt_in 700ms cubic-bezier(0.165, 0.84, 0.44, 1) 4600ms 1 normal forwards;
+}
+.active #f2_txt5{
+	animation: f2_txt_in 700ms cubic-bezier(0.165, 0.84, 0.44, 1) 4900ms 1 normal forwards;
+}
+
+.active #f2_textos{
+	animation: alphaOut 1ms step-start 6500ms 1 normal forwards;
+}
+
+.active #circ_lar{
+	animation: circulo_in 500ms cubic-bezier(.27,1.45,.55,.98) 3500ms 1 normal forwards,
+	alphaOut 1ms step-start 6500ms 1 normal forwards;
+}
+.active #circ_ver{
+	animation: circulo_in 500ms cubic-bezier(.27,1.45,.55,.98) 3600ms 1 normal forwards,
+	alphaOut 1ms step-start 6500ms 1 normal forwards;
+}
+
+.active #modelo2{
+	animation: alphaIn 1ms step-start 3400ms 1 normal forwards,
+	alphaOut 1ms step-start 6500ms 1 normal forwards;
+}
+
+/*-------------------------------------------------*/
+@keyframes f2_txt_in{
+	0%{opacity: 0; transform: translateY(10px) rotate(0.01deg);}
+	100%{opacity: 1; transform: translateY(0px) rotate(0.01deg);}
+}
+
+@keyframes circulo_in{
+	0%{opacity: 1; transform: scale(0);}
+	100%{opacity: 1; transform: scale(1);}
+}
+@keyframes circulo_out{
+	0%{opacity: 1; transform: scale(1);}
+	100%{opacity: 1; transform: scale(0);}
+}
+
+@keyframes f2_brilhoIn{
+	0%{opacity: 1; transform: scale(0) rotate(10deg);}
+	50%{opacity: 1; transform: scale(1) rotate(0deg);}
+	100%{opacity: 1; transform: scale(0) rotate(10deg);}
+}
+
+/********************** Frame 3 *******************/
+
+#modelo3{
+	opacity: 0;
+}
+
+#cta_shape{
+	background-color: #f26f39;
+	overflow: hidden;
+	border-radius: 5px;
+  left: 66px;
+  top: 177px;
+  width: 0px;
+  height: 34px;
+}
+
+#cta_txt{
+	left: -66px;
+	top: -177px;
+	opacity: 0;
+}
+
+#cta_brilho{
+    left: 66px;
+    top: 177px;
+    width: 168px;
+    height: 34px;
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+#brilho{
+	left: -42px;
+	width: 25px;
+	height: 100%;
+	background-color: #fff;
+	opacity: 0.4;
+	transform: skewX(-37deg);
+	-webkit-filter: blur(4px);
+	filter: blur(4px);
+}
+
+#sprite {
+	background: url(sprite.png);
+	width: 300px;
+	height: 600px;
+	opacity: 0;
+	overflow: hidden;
+}
+#maskSprite{
+	overflow: hidden;
+	width: 100%;
+	height: 170px;
+}
+/*-------------------------------------------------*/
+
+.active #modelo3{
+	animation: alphaIn 1ms step-start 6500ms 1 normal forwards;
+}
+
+.active #cta_shape{
+	animation: cta_shape 700ms cubic-bezier(0.165, 0.84, 0.44, 1) 6500ms 1 normal forwards;
+}
+.active #cta_txt{
+	animation: cta_txt 700ms cubic-bezier(0.165, 0.84, 0.44, 1) 6500ms 1 normal forwards;
+}
+
+.active #brilho{
+	animation: brilhoIn 2300ms ease 7000ms 1 normal forwards;
+}
+
+.active #logo{
+	animation: alphaOut 1ms step-start 6500ms 1 normal forwards;
+}
+
+.active #sprite {
+	animation: sprite 1500ms steps(25) 6500ms 1 normal forwards;
+}
+/*-------------------------------------------------*/
+@keyframes sprite{
+	0%{opacity: 1; background-position: 0 0px;}
+	100%{opacity: 1; background-position: 0 -15000px;}
+}
+@keyframes brilhoIn{
+	0%{transform: translateX(0px)skewX(-37deg);}
+	100%{transform: translateX(250px)skewX(-37deg);}
+}
+
+@keyframes f3_txt_in{
+	0%{opacity: 1; transform: translateY(70px);}
+	100%{opacity: 1; transform: translateY(0px);}
+}
+
+@keyframes cta_txt{
+	0%{opacity: 1; transform: translateX(-132px);}
+	100%{opacity: 1; transform: translateX(0px);}
+}
+
+@keyframes cta_shape{
+	0%{width: 0px;}
+	100%{width: 168px;}
+}
+
+/********************** KEYFRAMES *******************/
+@keyframes alphaOut{
+	0%{opacity: 1;}
+	100%{opacity: 0;}
+}
+
+@keyframes alphaIn{
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
